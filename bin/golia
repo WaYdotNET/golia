@@ -4,8 +4,8 @@ require File.dirname(__FILE__) + '/../lib/golia'
 
 if ARGV[0]
   golia = Golia.new(ARGV[0], ARGV[1] == "--w3c")
-  golia_result = golia.start!
-  puts "#{golia_result}"
+  @golia_result = golia.start!
+  puts "#{@golia_result}"
 else
   puts "<= You need to pass a domain ex: www.lipsiasoft.com"
 end
