@@ -72,6 +72,7 @@ class Golia
   def start!
     loop do
       break if @links.empty?
+      golia_result = []
       @links.each do |link|
         begin
           @checked << link
@@ -103,6 +104,7 @@ class Golia
       puts "  http://validator.lipsiasoft.com/check?uri=#{link}"
     end
     puts "Average load time %0.2fsec" % [@sec.inject(0) { |memo, sec| memo+=sec; memo }/@sec.size]
-    puts
+    @avg_load_time = @sec.inject(0) { |memo, sec| memo+=sec; memo }/@sec.size
+    golia_result << [ :average_load_time => @avg_load_time]
   end
 end
