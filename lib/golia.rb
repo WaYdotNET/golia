@@ -70,9 +70,9 @@ class Golia
   end
 
   def start!
+    golia_result = []
     loop do
       break if @links.empty?
-      golia_result = []
       @links.each do |link|
         begin
           @checked << link
