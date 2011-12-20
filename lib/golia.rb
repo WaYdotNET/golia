@@ -103,7 +103,7 @@ class Golia
       puts "  http://validator.lipsiasoft.com/check?uri=#{link}"
     end
     puts "Average load time %0.2fsec" % [@sec.inject(0) { |memo, sec| memo+=sec; memo }/@sec.size]
-    @avg_load_time = @sec.inject(0) { |memo, sec| memo+=sec; memo }/@sec.size
-    @avg_load_time
+    @avg_loadtime = @sec.inject(0) { |memo, sec| memo+=sec; memo }/@sec.size
+    @avg_loadtime
   end
 end
