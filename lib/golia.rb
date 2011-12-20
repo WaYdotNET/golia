@@ -70,7 +70,6 @@ class Golia
   end
 
   def start!
-    golia_result = []
     loop do
       break if @links.empty?
       @links.each do |link|
@@ -105,6 +104,7 @@ class Golia
     end
     puts "Average load time %0.2fsec" % [@sec.inject(0) { |memo, sec| memo+=sec; memo }/@sec.size]
     @avg_load_time = @sec.inject(0) { |memo, sec| memo+=sec; memo }/@sec.size
-    golia_result << [ :average_load_time => @avg_load_time]
+
+    return @avg_load_time
   end
 end
